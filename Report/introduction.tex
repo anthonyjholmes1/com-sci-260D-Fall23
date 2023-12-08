@@ -6,3 +6,13 @@
     \item State the objectives and provide a roadmap for the study.
     \item Offer a more detailed narrative compared to the abstract.
 \end{enumerate}
+
+The advancements in contrastive learning techniques have propelled the capabilities of deep neural networks by fostering the extraction of rich and discriminative representations from unlabeled data. Despite their promise, the susceptibility of these models to poisoning attacks, particularly in the domain of contrastive learning, presents a formidable challenge. Poisoning attacks aim to corrupt the training data, introducing adversarial samples that can severely compromise the model's performance and reliability.
+
+In the quest to fortify against these adversarial threats, this paper embarks on an exploration of the SAS (Subsets that maximize Augmentation Similarity to the full data) method as a core-set selection strategy within the realm of contrastive Semi-Supervised Learning (SSL). While SAS primarily aims to identify a subset of data points that alleviate computational burdens by maximizing similarity to the entire dataset under various augmentations, its performance under poisoned datasets in contrastive learning remains an uncharted territory.
+
+The pivotal objective of this work is to evaluate the robustness and effectiveness of the SAS-selected core-set under the influence of poisoned data in contrastive SSL scenarios. Despite the valuable contributions of SAS in core-set selection for SSL, its behavior and adaptability when exposed to adversarial manipulations through poisoning attacks have yet to be thoroughly investigated in current research endeavors.
+
+Through comprehensive empirical evaluations, we aim to shed light on the behavior of the SAS-selected subset when faced with poisoned datasets in contrastive learning environments. This investigation not only seeks to elucidate the response of the SAS method under adversarial scenarios but also endeavors to assess its resilience and suitability for practical deployment in scenarios susceptible to data poisoning.
+
+In subsequent sections, this paper will delve into the fundamental principles of contrastive learning, outline the mechanisms behind poisoning attacks in this context, introduce the SAS core-set selection methodology, and present an extensive evaluation framework designed to examine the performance of SAS under the influence of poisoned datasets in contrastive SSL scenarios. The findings from this evaluation will contribute to a nuanced understanding of the robustness and effectiveness of the SAS method, addressing a critical gap in the current landscape of contrastive SSL research.

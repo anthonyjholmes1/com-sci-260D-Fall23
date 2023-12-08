@@ -1,8 +1,5 @@
 \section{Related Work}\label{sec:rel_work}
 
-\begin{enumerate}
-    \item Review existing literature relevant to your study.
-    \section{Related Work}
 
 \paragraph{Contrastive Learning} 
 Contrastive learning has emerged as a prominent paradigm in the domain of unsupervised representation learning, aiming to extract meaningful and discriminative features from raw data. The fundamental principle underlying contrastive learning revolves around the idea of learning representations by maximizing agreement between similar pairs of data samples while minimizing agreement between dissimilar pairs.
@@ -33,8 +30,10 @@ Poisoning attacks can significantly impact the learned representations and gener
 Adversaries continually evolve attack strategies to evade existing defense mechanisms. Robust defense against poisoning attacks in contrastive learning requires a comprehensive understanding of these evolving adversarial techniques and the development of proactive defense strategies \cite{biggio2013evasion}.
 
 
+\paragraph{SAS Core-Set Selection in Contrastive SSL}
 
+Finding examples that significantly contribute to contrastive Semi-Supervised Learning (SSL) is notably challenging compared to core-set selection in supervised learning. Methods in supervised learning rely on loss or confidence of predictions, requiring labeled data. Contrastingly, SSL lacks labeled data, making it difficult to identify crucial examples.
 
-    \item Highlight key findings and methodologies from previous research.
-    \item Identify gaps or areas where your study contributes.
-\end{enumerate}
+SAS~\cite{pmlr-v202-joshi23b} addresses this challenge by maximizing alignment between augmented views within a class and minimizing dissimilarity between views of different classes. These examples, pivotal for contrastive SSL, pull together instances within a class and maintain learned class representation centers. Surprisingly,~\cite{pmlr-v202-joshi23b} observed that examples vital for contrastive SSL have less impact on supervised learning. Therefore, they concluded that high-confidence, low-forgetting-score examples can be safely excluded from supervised learning without affecting accuracy, while difficult-to-learn examples crucial in supervised learning might hinder contrastive SSL performance.
+
+Extensive evaluations by~\cite{pmlr-v202-joshi23b} demonstrated SAS's efficacy across various datasets (e.g., CIFAR, STL10, TinyImageNet) and contrastive learning methods (e.g., SimCLR, BYOL). SAS subsets consistently outperform random subsets by over 3% in downstream performance, efficiently extracting subsets critical for SSL early in training or using smaller proxy models. Nevertheless, a significant inquiry remains unaddressed is the performance assessment of the SAS-selected subset under a poisoned dataset is yet to be explored. This gap underscores the necessity to scrutinize the resilience and efficiency of the SAS-selected subset when exposed to poisoned data, representing a crucial aspect that has not been adequately investigated in current research endeavors

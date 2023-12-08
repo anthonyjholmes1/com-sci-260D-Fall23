@@ -2,6 +2,39 @@
 
 \begin{enumerate}
     \item Review existing literature relevant to your study.
+    \section{Related Work}
+
+\paragraph{Contrastive Learning} 
+Contrastive learning has emerged as a prominent paradigm in the domain of unsupervised representation learning, aiming to extract meaningful and discriminative features from raw data. The fundamental principle underlying contrastive learning revolves around the idea of learning representations by maximizing agreement between similar pairs of data samples while minimizing agreement between dissimilar pairs.
+
+
+One of the foundational architectures in contrastive learning is the Siamese network, initially introduced for signature verification tasks. Siamese networks consist of twin networks sharing the same architecture and weights, where two input samples are processed through identical networks to generate embeddings. The objective of Siamese networks is to bring similar samples closer together in the embedding space while pushing dissimilar samples apart. This is typically achieved by utilizing contrastive loss functions, such as the contrastive loss introduced by Hadsell et al. in their seminal work~\cite{bertinetto2016fully}. The contrastive loss penalizes the model when embeddings of similar pairs are farther apart than a specified margin, and when embeddings of dissimilar pairs are closer than this margin.
+
+
+Another influential development in contrastive learning is InfoNCE (Information Noise Contrastive Estimation), proposed by~\cite{oord2018representation}. InfoNCE is rooted in the framework of self-supervised learning, where the objective is to learn useful representations from unlabeled data. InfoNCE formulates the contrastive objective based on the mutual information between different views of the same instance. By maximizing the agreement between representations derived from different augmentations of the same data sample while minimizing the agreement between representations from different samples, InfoNCE facilitates the learning of robust and informative representations.
+
+
+Recent advancements in contrastive learning have witnessed various extensions and improvements to the core principles. Approaches such as Momentum Contrast (MoCo)~\cite{he2020momentum}, SimCLR (Simple Contrastive Learning Representation)~\cite{chen2020simple}, and BYOL (Bootstrap Your Own Latent)~\cite{grill2020bootstrap} have demonstrated substantial performance gains by refining the mechanisms of generating positive and negative pairs, designing more effective augmentation strategies, or introducing novel pretext tasks.
+
+
+
+\paragraph{Mechanisms Behind Poisoning Attacks in Contrastive Learning}
+
+Contrastive learning models are vulnerable to poisoning attacks, where adversaries strategically inject malicious samples into the training data to manipulate the model's behavior. Understanding the mechanisms of these poisoning attacks is crucial in fortifying models against such adversarial threats.
+
+Adversarial perturbations play a pivotal role in poisoning attacks against contrastive learning models. Adversaries craft perturbations that are imperceptible to the human eye but can substantially alter the learned representations by the model \cite{goodfellow2014explaining}. These perturbations, when added to training data, aim to deceive the model during the learning process, causing it to misclassify or generalize poorly.
+
+Poisoning attacks in contrastive learning can also manipulate the embedding space and decision boundaries of the model. By strategically placing poisoned instances in the training data, adversaries aim to shift the representations of specific classes or alter the decision boundaries, leading to misclassifications or biases in learned representations \cite{kim2020adversarial}.
+
+Another critical aspect is the transferability of poisoning attacks across different models or tasks. Adversarial examples generated to poison a specific contrastive learning model might generalize and cause disruptions in other models, making them susceptible to similar attacks \cite{papernot2016transferability}. Understanding this transferability is essential for devising robust defense strategies.
+
+Poisoning attacks can significantly impact the learned representations and generalization capabilities of contrastive learning models. The introduction of poisoned instances during training can corrupt the learned representations, leading to compromised generalization performance and reduced model robustness against unseen data \cite{munoz2017towards}.
+
+Adversaries continually evolve attack strategies to evade existing defense mechanisms. Robust defense against poisoning attacks in contrastive learning requires a comprehensive understanding of these evolving adversarial techniques and the development of proactive defense strategies \cite{biggio2013evasion}.
+
+
+
+
     \item Highlight key findings and methodologies from previous research.
     \item Identify gaps or areas where your study contributes.
 \end{enumerate}

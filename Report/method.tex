@@ -1,7 +1,15 @@
 \section{Method}
 
+\iffalse
 \begin{enumerate}
     \item Describe the research design, approach, and methodology.
     \item Detail the procedures and tools used for data collection and analysis.
     \item Ensure clarity and reproducibility for readers.
 \end{enumerate}
+\fi
+
+Our research approach involved an extensive review of existing literature in the field of contrastive learning. Given the evolving nature of this field, we observed a continuous progression of framework comparisons. To establish a fair basis for comparison, we selected frameworks that shared similarities and were released around the same time frame. This approach allowed each framework to showcase its strengths on a level playing field. Additionally, we conducted experiments spanning at least 50 epochs to ensure a robust evaluation of the models.
+
+While pursuing our research objectives, we faced several challenges, primarily stemming from limitations in computational resources. Acquiring substantial computing power can be costly, which constrained the extent of our experiments. As a result, we limited our study to utilizing the CIFAR-10 and CIFAR-10C datasets, both widely recognized in the industry. It is worth noting that CIFAR-10C required manual download and incorporation into the PyTorch environment.Time constraints posed another challenge. Our goal was to train models with a broad range of parameters for extended durations to obtain comprehensive results. However, this approach had to be balanced against our available compute resources.
+
+To ensure the reproducibility of our work, we have made our research repository openly accessible on GitHub \url{https://github.com/anthonyjholmes1/com-sci-260D-Fall23}. In this repository, we have provided links to the Google Colab files used to run our experiments. To facilitate comparison, we designed a single Google Colab file that contained all the different models. This setup allowed us to efficiently compare results, especially if a particular model achieved higher accuracy in fewer epochs. Detailed comments are provided at each stage in the Google Colab file, explaining our rationale for each component. Furthermore, we modularized the models into separate classes within the Colab file, enabling users to easily customize their experimentation by commenting out specific model sections.

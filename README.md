@@ -1,4 +1,4 @@
-# COM SCI 260D Large Scale Machine Learning
+#COM SCI 260D Large Scale Machine Learning
 
 ## Description
 
@@ -17,4 +17,4 @@ In this paper, we shall embark upon an extensive examination of the repertoire o
 | Model | Link |
 | ----- | ---- |
 | MoCo | [link](https://colab.research.google.com/github/facebookresearch/moco/blob/colab-notebook/colab/moco_cifar10_demo.ipynb) |
-| SimCLR | [link](https://github.com/leftthomas/SimCLR?tab=readme-ov-file) |
+| SimCLR | [link](https://github.com/leftthomas/SimCLR?tab=readme-ov-file) | 

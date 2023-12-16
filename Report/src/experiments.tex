@@ -1,0 +1,29 @@
+\section{Experiments}
+
+\begin{comment}
+\begin{enumerate}
+    \item Present the design and execution of your experiments.
+    \item Report on the data collected and any statistical or analytical methods used.
+    \item Provide sufficient detail for others to replicate your experiments.
+\end{enumerate}
+\end{comment}
+
+We trained and tested two contrastive learning approaches against clean and perturbed imaged based datasets found online (CIFAR-10 and CIFAR-10-P). The contrastive learning methods we used are MoCo and SimCLR. With the help of online implementations, we formulated our experiments and altered them to our specific use-cases. We conducted our experiments with 50 epochs in order to enable us to have multiple passes on the data, preventing any error that may have come about by single poorly-performing training instances. At this point, we started to see diminishing returns in performance gain per epoch and felt it was an the appropriate number, especially given clearly distinct differences in test accuracy at this point. This was also set as a constant to enable comparative analysis even between different contrastive learning models.
+
+After a few iterations of each instance, we got the following results:
+
+\begin{multicols}{2}
+MoCo, CIFAR-10: 72.4\% accuracy
+
+SimCLR, CIFAR-10: 74.8\% accuracy
+
+MoCo, CIFAR-10-P: 42.3\% accuracy
+
+SimCLR, CIFAR-10-P: 42.9\% accuracy
+\end{multicols}
+
+Interestingly, when comparing the accuracies between the two models on both the CIFAR-10 and CIFAR-10-P datasets, we don't notice a significant difference. Both perform similarly overall, with the different models, for each dataset, having potentially statistically insignificant differences. 
+
+This may be compounded by the fact that we are lacking insight into the performance of MoCo and SimCLR on these datasets for more epochs (ideally 200 or more), but to assume that this might be impacting our observations would be a gross extrapolation.
+
+Overall, we see that each model drops in accuracy about 30\%. When we calculate the percent decrease using the clean results as a normalizer, we conclude a 41.6\% degradation of performance on MoCo and a 42.6\% degradation on SimCLR.

@@ -6,6 +6,7 @@
 
 % ready for submission
 \usepackage[preprint]{neurips_data_2023}
+\usepackage{multicol}
 
 % to compile a preprint version, add the [preprint] option, e.g.:
 %     \usepackage[preprint]{neurips_data_2023}
@@ -134,7 +135,7 @@
 \newcommand{\DISPEL}{\textsc{Dispel}\xspace}
 \newcommand{\SPARE}{\textsc{Spare}\xspace}
 
-\title{Protecting Against Contrastive Learning Poisoning with SAS}
+\title{Comparative Analysis of Contrastive Learning Methods Against Data Poisoning}
 
 % The \author macro works with any number of authors. There are two commands
 % used to separate the names and addresses of multiple authors: \And and \AND.
@@ -144,16 +145,16 @@
 % authors names on the first line, and the last on the second line, try using
 % \AND instead of \And before the third author name.
 
-\author{%   
-Mohammad Akbarnezhad\\
+\author{% 
+  Mohammad Akbarnezhad \\
    \And
-   Adithya Embar\\
+  Adithya Embar \\
    \And
-   Dylan Gunn\\
+    Dylan Gunn \\
    \And
-   Anthony Holmes \\
+  Anthony Holmes \\
   \And \vspace{-9mm}\\
-  \{ email1, email2, email3, anthonyjholmes1\}@ucla.edu\\
+  \\miles85@ucla.edu, aembar@ucla.edu, dylangunn@ucla.edu, anthonyjholmes1@ucla.edu\\
   Department of Computer Science, UCLA, Los Angeles, CA, 90024.\\
 }
 
@@ -175,15 +176,12 @@ Mohammad Akbarnezhad\\
 \input{experiments}
 
 \input{conclusion}
-
+\newpage
 \input{contributions}
 
 %\section*{References}
 \newpage
 \bibliography{references}
 \bibliographystyle{plainnat}
-
-\newpage
-\input{appendix}
 
 \end{document}

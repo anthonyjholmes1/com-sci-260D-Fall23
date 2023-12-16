@@ -1,0 +1,18 @@
+\section{Conclusion}\vspace{-2mm}
+
+\iffalse 
+\begin{enumerate}
+    \item Summarize the key findings and their implications.
+    \item Reflect on how your results contribute to the broader context.
+    \item Address any limitations and suggest avenues for future research.
+\end{enumerate}
+\fi 
+In our experiments with clean datasets, SimCLR consistently outperformed MoCo, showcasing a significantly higher accuracy rate of 74.8\% compared to MoCo's 72.4\%. This suggests that SimCLR, in this specific setting, demonstrates superior performance, at least for low-epoch training. When subjected to perturbed datasets, both MoCo and SimCLR experienced a notable decrease in accuracy, reflecting the vulnerability of these frameworks to data poisoning. While SimCLR maintained a higher average accuracy of 42.9\% in this scenario, and MoCo followed closely with an average of 42.3\%, it is evident that both methods are susceptible to perturbations. Relative to their performance on the clean datasets, MoCo was affected by 41.6\% and SimCLR by 42.6\%.
+
+Additionally, it is noteworthy that when we compared the models against each other, considering various factors such as data augmentation strategies, encoders, and loss functions, we observed that neither SimCLR nor MoCo consistently outperformed the other by a significant margin. This suggests that the single choice of any these factors may not be the sole determinant of superior performance in the face of poisoned data, and the interplay of these elements in contrastive learning frameworks may be more complex and nuanced than initially anticipated. This intriguing finding calls for further exploration into the methods by which contrastive learning models may become more robust to both corruption and adversarial perturbation. Interestingly, these findings are at least consistent with Carlini's conjecture that more accurate models are more vulnerable to poisoning attacks.
+
+Our results contribute valuable insights into the broader context of contrastive learning research. They emphasize the need for further investigation into the robustness of contrastive learning frameworks when confronted with perturbed data, a critical consideration in real-world applications. Additionally, our findings underscore the relevance of selecting appropriate contrastive learning methods based on the specific problem and dataset, highlighting SimCLR as a strong candidate in certain image-based scenarios. However, at least amongst the models tested, there is no recommendation to be made for robustness on all datasets.
+
+While our study provides valuable insights, it is not without limitations. First, our experiments were conducted on a specific subset of datasets, and the generalizability of our findings to other domains may vary. Future research should extend these investigations to diverse datasets and problem settings. Furthermore, we acknowledge that our study did not delve deeply into the mechanisms causing the observed performance disparities. Future research avenues should focus on understanding the underlying reasons behind these differences, potentially involving architectural and hyperparameter analyses. It would also be useful to repeat these experiments for more epochs, to see if there is a divergence that might be statistically significant once the models have better fitted.
+
+In conclusion, our research contributes to the ongoing discourse on contrastive learning robustness, offering a foundation for further exploration in diverse contexts and datasets. The pursuit of robust machine learning models remains an imperative task, and our findings illuminate important considerations in this endeavor.

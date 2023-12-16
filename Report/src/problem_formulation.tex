@@ -1,0 +1,23 @@
+\section{Problem Formulation}
+
+\begin{comment}
+\begin{enumerate}
+    \item Clearly define the problem or question your research aims to address.
+    \item Try to be formal here (use mathematical notation as far as possible)
+    \item Clearly state the specific setting you are exploring rather than the overarching problem
+\end{enumerate}
+\end{comment}
+
+Clustering and classification methods, especially those employing supervised learning methods, are especially vulnerable to poisoning. By introducing a small subset of permuted or altered data, the accuracy of the entire resultant model trained on that data can be massively affected. Even on the scale of datasets used to train models that do work like spam identification in Gmail and malware detection in crowdsourced antivirus software, a targeted mass attack via submission of false negatives is enough to impact these models' classifications \cite{constantin2021data}.
+
+Because contrastive learning methods make use of identified subsets that maximize expected augmentation similarity, the only way that a poisoned dataset can affect its performance is by affecting those learned minimal subsets; essentially, the permutations have to be drastic enough to affect the subsets that are chosen to maximize augmentation similarity in the feature space. The resultant subset is more eloquently described as follows:
+
+$$S_k\;\; =\;\; arg min_{S \in V,|S| \leq r_k}\sum_{i\in V_k\S_k}\sum_{j\in S_k} d_{i,j},\quad d_{i,j} = <f(x_i), f(x_j)> $$
+
+Theoretically, this should provide some robustness to dataset corruption and perturbation. While poisoning other types of data, like incorporating uncommon misspellings into a sentiment analysis-performing model, can cause massive reductions in performance, contrastive learning should not be so sensitive. For example, Google's toxicity detector can be nearly completely overridden by slightly changing some words; phrases that rank 90\% in "toxicity" easily are reduced to 10-15\% toxicity with the addition of basic perturbations \cite{hosseini2017}.
+
+In our investigation, we aim to assess the robustness of contrastive learning frameworks, including notable methodologies such as MoCo, SimCLR, and CMC. To comprehensively evaluate their resilience against data poisoning, we will explore various key aspects identified in the literature. These critical facets encompass strategies such as Data Augmentation, Parallel Augmentation, Architectural choices, Loss Functions, and Data Modalities. For the scope of our study, we will exclusively focus on two widely utilized datasets, namely CIFAR-10 and CIFAR-10-P, both of which are image-based. As all of our experiments share the same data modality, the consideration of Data Modality variability becomes unnecessary in this particular context. CIFAR-10 was selected as our baseline dataset, providing a consistent reference point with the same model configuration. This choice allows us to establish a solid foundation for performance assessment, which we can then use to validate the outcomes when applied to the CIFAR-10P dataset.
+
+Crucial to our research is the pursuit of a deeper understanding of the significance behind the choices made in data augmentation, parallel augmentation, architectural decisions, and loss function selection within the context of contrastive learning. We seek to elucidate why these choices have a bearing on the robustness of these frameworks.
+
+Additionally, we will investigate whether there exists any discernible correlation between the choice of dataset and any of these key aspects. This examination will provide insights into whether certain datasets are more susceptible to the influence of these factors, shedding light on potential dataset-specific nuances that impact the performance of contrastive learning frameworks.

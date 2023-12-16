@@ -1,0 +1,17 @@
+\section{Method}
+\begin{comment}
+\begin{enumerate}
+    \item Describe the research design, approach, and methodology.
+    \item Detail the procedures and tools used for data collection and analysis.
+    \item Ensure clarity and reproducibility for readers.
+\end{enumerate}
+\end{comment}
+To establish a fair basis for comparison, we made use of publicly-available MoCo and SimCLR models. We attempted to standardize our environment as much as possible to reduce the impact of confounding variables by only using implementations of these models in Torchvision; if the original papers' implementations were done on another framework, we only made use of alternative implementations that had proven equivalent performance on the same datasets, using accuracy as our performance measure, to the original models.
+
+Each of the models was trained for 50 epochs on both CIFAR-10 and CIFAR-10-P datasets. It is important to note that the CIFAR-10-P dataset is a perturbed collection of the original CIFAR-10 dataset. While it is not optimally poisoned and is not targeted on any specific classes, it still functions similarly to an indiscriminate attack on a dataset, working to reduce the overall accuracy of the final model. This is done by applying transformations on the original images, including but not limited to: brightness changes, adding gaussian blur and noise, adding motion blur, layered effects, and more common and easy augmentations like rotation, scaling, and shearing of images.
+
+The use of only 50 epochs for training each of these models may affect the final conclusions of our investigation. In many cases, standardized comparison of final accuracies between contrastive learning models is done on a scale of 200 to 500 epochs, at which point iterative gain is rather inconsequential and potentially causing the model to overfit to its training data. Our restriction on computational resources, being done on only a single GPU and in a time-constrained environment (Google Colab requires constant interaction, or will otherwise close the open instances), made it such that it was unreasonable to attempt anything more. This means that we will lack the tail behavior of training these models for more epochs, potentially causing us to make premature assumptions about the training behavior of these models for both unperturbed and perturbed data. It is also due to limited computational power that these models were trained on CIFAR-10 datasets, as the more commonly used ImageNet datasets are far too large and vastly reduce the maximum batch size that fits in our GPU memory.
+
+To ensure the reproducibility of our work, we have made our research repository openly accessible on GitHub \url{https://github.com/anthonyjholmes1/com-sci-260D-Fall23}. In this repository, we have provided the Google Colab files used to run our experiments. Setup in individual Google Colab environments allowed easy parallelization of computation and comparison of results. All that is required for reproduction of our tests is for the individual Python notebook files to be imported into either a local or Colab instance and run. Our code and its specific imports rely on the existing Colab functionality; some packages may not be available on a local machine without additional installation.
+
+All tests were run on instances containing single NVIDIA T4 GPUs, via Google Colab.

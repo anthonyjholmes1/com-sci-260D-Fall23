@@ -12,9 +12,9 @@ In this paper, we shall embark upon an extensive examination of the repertoire o
 - Dylan Gunn
 - Mohammad Akbarnezhad
 
-## Google Colabs of the Python Notebooks
+## Model Sources
 
-| Dataset | Model | Epochs | Link |
-| --- | ----------- | ----------- | ----------- |
-| CIFAR-10 | SimCLR | 50 | [SimCLR-CIFAR-10-50-Epochs](https://colab.research.google.com/drive/12i2jy8_FkDXfZI0eZ4oyuRtn0DQWH6g4?usp=sharing)|
-
+| Model | Link |
+| ----- | ---- |
+| MoCo | [link](https://colab.research.google.com/github/facebookresearch/moco/blob/colab-notebook/colab/moco_cifar10_demo.ipynb) |
+| SimCLR | [link](https://github.com/leftthomas/SimCLR?tab=readme-ov-file) |
